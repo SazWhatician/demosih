@@ -108,5 +108,229 @@
         </div>
     </div>
     
-    </body>
+    <script src="https://unpkg.com/gsap@3.9.1/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script>
+        // --- MASTER TRANSLATION OBJECT ---
+        const allTranslations = {
+            home: {
+                en: {
+                    app_name: "AmaChasi", nav_home: "Home", nav_report: "Get Report", nav_history: "History", nav_contact: "Contact", nav_login: "Login",
+                    hero_title: "Smart Farming, Brighter Futures",
+                    hero_subtitle: "Leveraging technology to predict crop yields and provide actionable insights for farmers across India. Your partner in agricultural success.",
+                    hero_cta: "Get Started", features_title: "Why Choose AmaChasi?", feature1_title: "Yield Prediction",
+                    feature1_desc: "Accurate forecasts based on your location, soil data, and weather patterns.",
+                    feature2_title: "Smart Optimization",
+                    feature2_desc: "Receive personalized suggestions for fertilizer, irrigation, and crop selection.",
+                    feature3_title: "Record Keeping",
+                    feature3_desc: "Easily track your past yields and recommendations to plan for the future."
+                },
+                or: {
+                    app_name: "ଆମ ଚାଷୀ", nav_home: "ମୁଖ୍ୟ ପୃଷ୍ଠା", nav_report: "ରିପୋର୍ଟ ପାଆନ୍ତୁ", nav_history: "ଇତିହାସ", nav_contact: "ଯୋଗାଯୋଗ", nav_login: "ଲଗଇନ୍",
+                    hero_title: "ସ୍ମାର୍ଟ ଚାଷ, ଉଜ୍ଜ୍ୱଳ ଭବିଷ୍ୟତ",
+                    hero_subtitle: "ସାରା ଭାରତର ଚାଷୀମାନଙ୍କ ପାଇଁ ଫସଲ ଅମଳର ପୂର୍ବାନୁମାନ ଏବଂ କାର୍ଯ୍ୟକ୍ଷମ ପରାମର୍ଶ ପ୍ରଦାନ କରିବା ପାଇଁ ପ୍ରଯୁକ୍ତିବିଦ୍ୟାର ବ୍ୟବହାର। କୃଷି ସଫଳତାରେ ଆପଣଙ୍କର ସାଥୀ।",
+                    hero_cta: "ଆରମ୍ଭ କରନ୍ତୁ", features_title: "ଆମ ଚାଷୀ କାହିଁକି ବାଛିବେ?", feature1_title: "ଅମଳ ପୂର୍ବାନୁମାନ",
+                    feature1_desc: "ଆପଣଙ୍କ ସ୍ଥାନ, ମାଟି ତଥ୍ୟ, ଏବଂ ପାଣିପାଗ ଢାଞ୍ଚା ଉପରେ ଆଧାରିତ ସଠିକ ପୂର୍ବାନୁମାନ।",
+                    feature2_title: "ସ୍ମାର୍ଟ ଅପ୍ଟିମାଇଜେସନ୍",
+                    feature2_desc: "ସାର, ଜଳସେଚନ, ଏବଂ ଫସଲ ଚୟନ ପାଇଁ ବ୍ୟକ୍ତିଗତ ପରାମର୍ଶ ଗ୍ରହଣ କରନ୍ତୁ।",
+                    feature3_title: "ରେକର୍ଡ ରଖିବା",
+                    feature3_desc: "ଭବିଷ୍ୟତ ପାଇଁ ଯୋଜନା କରିବାକୁ ଆପଣଙ୍କର ଅତୀତର ଅମଳ ଏବଂ ସୁପାରିଶଗୁଡ଼ିକୁ ସହଜରେ ଟ୍ରାକ୍ କରନ୍ତୁ।"
+                }
+            },
+            report: {
+                en: {
+                    app_name: "AmaChasi", nav_home: "Home", nav_report: "Get Report", nav_history: "History", nav_contact: "Contact", nav_login: "Login",
+                    report_title: "Generate Your Crop Report",
+                    report_subtitle: "Fill in the details below to receive a personalized yield prediction and optimization plan.",
+                    form_name: "Your Name", form_number: "Registered Number", form_submit: "Generate Report",
+                    dash_title: "Your Crop Yield Analysis", dash_yield: "Predicted Yield (Rice)", dash_soil: "Soil Health Score", dash_water: "Watering Needs", dash_nutrients: "Soil Nutrient Levels",
+                    sugg_heading: "Optimization Tips:",
+                    sugg_tip1: "Increase Nitrogen-based fertilizer by 15%.",
+                    sugg_tip2: "Ensure consistent irrigation, maintaining high soil moisture.",
+                    sugg_tip3: "Consider crop rotation with legumes next season."
+                },
+                or: {
+                    app_name: "ଆମ ଚାଷୀ", nav_home: "ମୁଖ୍ୟ ପୃଷ୍ଠା", nav_report: "ରିପୋର୍ଟ ପାଆନ୍ତୁ", nav_history: "ଇତିହାସ", nav_contact: "ଯୋଗାଯୋଗ", nav_login: "ଲଗଇନ୍",
+                    report_title: "ଆପଣଙ୍କ ଫସଲ ରିପୋର୍ଟ ପ୍ରସ୍ତୁତ କରନ୍ତୁ",
+                    report_subtitle: "ଏକ ବ୍ୟକ୍ତିଗତ ଅମଳ ପୂର୍ବାନୁମାନ ଏବଂ ଅପ୍ଟିମାଇଜେସନ୍ ଯୋଜନା ପାଇବାକୁ ନିମ୍ନରେ ବିବରଣୀ ପୂରଣ କରନ୍ତୁ।",
+                    form_name: "ଆପଣଙ୍କ ନାମ", form_number: "ପଞ୍ଜୀକୃତ ନମ୍ବର", form_submit: "ରିପୋର୍ଟ ପ୍ରସ୍ତୁତ କରନ୍ତୁ",
+                    dash_title: "ଆପଣଙ୍କ ଫସଲ ଅମଳ ବିଶ୍ଳେଷଣ", dash_yield: "ଅନୁମାନିତ ଅମଳ (ଧାନ)", dash_soil: "ମୃତ୍ତିକା ସ୍ୱାସ୍ଥ୍ୟ ସ୍କୋର", dash_water: "ଜଳସେଚନ ଆବଶ୍ୟକତା", dash_nutrients: "ମୃତ୍ତିକା ପୋଷକ ସ୍ତର",
+                    sugg_heading: "ଅପ୍ଟିମାଇଜେସନ୍ ପରାମର୍ଶ:",
+                    sugg_tip1: "ନାଇଟ୍ରୋଜେନ୍ ଆଧାରିତ ସାର ୧୫% ବଢାନ୍ତୁ।",
+                    sugg_tip2: "ଉଚ୍ଚ ମୃତ୍ତିକା ଆର୍ଦ୍ରତା ବଜାୟ ରଖି ନିୟମିତ ଜଳସେଚନ ସୁନିଶ୍ଚିତ କରନ୍ତୁ।",
+                    sugg_tip3: "ପରବର୍ତ୍ତୀ ଋତୁରେ ଡାଲି ଜାତୀୟ ଫସଲ ସହିତ ଫସଲ ପରିବର୍ତ୍ତନ କରନ୍ତୁ।"
+                }
+            },
+            history: {
+                en: {
+                    app_name: "AmaChasi", nav_home: "Home", nav_report: "Get Report", nav_history: "History", nav_contact: "Contact", nav_login: "Login",
+                    history_title: "Your Report History", history_subtitle: "Review your past predictions and track your progress over time.",
+                    table_date: "Date", table_location: "Location", table_crop: "Crop", table_yield: "Predicted Yield"
+                },
+                or: {
+                    app_name: "ଆମ ଚାଷୀ", nav_home: "ମୁଖ୍ୟ ପୃଷ୍ଠା", nav_report: "ରିପୋର୍ଟ ପାଆନ୍ତୁ", nav_history: "ଇତିହାସ", nav_contact: "ଯୋଗାଯୋଗ", nav_login: "ଲଗଇନ୍",
+                    history_title: "ଆପଣଙ୍କ ରିପୋର୍ଟ ଇତିହାସ", history_subtitle: "ଆପଣଙ୍କର ଅତୀତର ପୂର୍ବାନୁମାନ ସମୀକ୍ଷା କରନ୍ତୁ ଏବଂ ସମୟ ସହିତ ଆପଣଙ୍କର ଅଗ୍ରଗତି ଟ୍ରାକ୍ କରନ୍ତୁ।",
+                    table_date: "ତାରିଖ", table_location: "ସ୍ଥାନ", table_crop: "ଫସଲ", table_yield: "ଅନୁମାନିତ ଅମଳ"
+                }
+            },
+            contact: {
+                en: {
+                    app_name: "AmaChasi", nav_home: "Home", nav_report: "Get Report", nav_history: "History", nav_contact: "Contact", nav_login: "Login",
+                    contact_title: "Get In Touch", contact_subtitle: "Have questions? We'd love to hear from you.",
+                    form_name: "Name", form_email: "Email", form_message: "Message", form_send: "Send Message", info_title: "Contact Information"
+                },
+                or: {
+                    app_name: "ଆମ ଚାଷୀ", nav_home: "ମୁଖ୍ୟ ପୃଷ୍ଠା", nav_report: "ରିପୋର୍ଟ ପାଆନ୍ତୁ", nav_history: "ଇତିହାସ", nav_contact: "ଯୋଗାଯୋଗ", nav_login: "ଲଗଇନ୍",
+                    contact_title: "ଯୋଗାଯୋଗ କରନ୍ତୁ", contact_subtitle: "ପ୍ରଶ୍ନ ଅଛି କି? ଆମେ ଆପଣଙ୍କଠାରୁ ଶୁଣିବାକୁ ପସନ୍ଦ କରିବୁ।",
+                    form_name: "ନାମ", form_email: "ଇମେଲ୍", form_message: "ସନ୍ଦେଶ", form_send: "ସନ୍ଦେଶ ପଠାନ୍ତୁ",
+                    info_title: "ଯୋଗାଯୋଗ ସୂଚନା"
+                }
+            }
+        };
+
+        let soilChartInstance = null;
+        function initializePageAndAnimations() {
+            // --- LOGIN MODAL LOGIC ---
+            const loginModal = document.getElementById('login-modal');
+            const loginBtns = [document.getElementById('login-btn'), document.getElementById('login-btn-mobile')];
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            loginBtns.forEach(btn => {
+                if(btn) btn.addEventListener('click', (e) => { e.preventDefault(); loginModal.style.display = 'flex'; });
+            });
+            if(closeModalBtn) closeModalBtn.addEventListener('click', () => { loginModal.style.display = 'none'; });
+            if(loginModal) loginModal.addEventListener('click', (e) => { if(e.target === loginModal) { loginModal.style.display = 'none'; } });
+
+
+            // --- RESPONSIVE NAV MENU LOGIC ---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // --- TRANSLATION LOGIC ---
+            const translateBtn = document.getElementById('translateBtn');
+            const translatableElements = document.querySelectorAll('[data-lang]');
+            let currentLang = localStorage.getItem('amaChasiLang') || 'en';
+
+            const translatePage = (lang) => {
+                const namespace = document.querySelector('[data-barba="container"]').dataset.barbaNamespace;
+                const pageTranslations = allTranslations[namespace];
+                if (!pageTranslations) return;
+
+                translatableElements.forEach(el => {
+                    const key = el.getAttribute('data-lang');
+                    if (pageTranslations[lang] && pageTranslations[lang][key]) {
+                        el.textContent = pageTranslations[lang][key];
+                    }
+                });
+                if (translateBtn) {
+                   translateBtn.textContent = lang === 'en' ? 'ଓଡ଼ିଆ' : 'English';
+                }
+            };
+            
+            if (translateBtn) {
+                translateBtn.addEventListener('click', () => {
+                    currentLang = currentLang === 'en' ? 'or' : 'en';
+                    localStorage.setItem('amaChasiLang', currentLang);
+                    translatePage(currentLang);
+                });
+            }
+            translatePage(currentLang);
+
+            // --- GSAP & PAGE-SPECIFIC LOGIC ---
+            const namespace = document.querySelector('[data-barba="container"]').dataset.barbaNamespace;
+            
+            if (namespace === 'home') {
+                 gsap.from(".hero-section .title", { duration: 1, y: 50, opacity: 0, ease: "power3.out" });
+                 gsap.from(".hero-section .subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.3, ease: "power3.out" });
+                 gsap.from(".hero-section .cta-button", { duration: 1, y: 50, opacity: 0, delay: 0.6, ease: "power3.out" });
+                 gsap.from(".feature-card", { duration: 0.8, y: 100, opacity: 0, stagger: 0.2, ease: "power3.out" });
+            } 
+            else if (namespace === 'report') {
+                const reportForm = document.getElementById('report-form');
+                if (reportForm) {
+                    reportForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        
+                        const formWrapper = document.getElementById('form-wrapper');
+                        const dashboard = document.getElementById('report-dashboard');
+                        const smsToast = document.getElementById('sms-toast');
+
+                        gsap.to(formWrapper, { opacity: 0, duration: 0.5, onComplete: () => {
+                            formWrapper.style.display = 'none';
+                            dashboard.classList.remove('hidden');
+                            gsap.from(dashboard, { opacity: 0, y: 50, duration: 1, ease: 'power3.out' });
+                            
+                            // Show SMS toast
+                            setTimeout(() => {
+                                if(smsToast) smsToast.style.transform = 'translateX(0)';
+                                setTimeout(() => {
+                                    if(smsToast) smsToast.style.transform = 'translateX(120%)';
+                                }, 4000);
+                            }, 1000);
+                            
+                            // Render Chart
+                            const ctx = document.getElementById('soilChart').getContext('2d');
+                            if (soilChartInstance) { soilChartInstance.destroy(); }
+                            soilChartInstance = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ['Nitrogen (N)', 'Phosphorus (P)', 'Potassium (K)'],
+                                    datasets: [{
+                                        label: 'Nutrient Level (kg/ha)',
+                                        data: [120, 85, 150], // Dummy data
+                                        backgroundColor: ['rgba(34, 197, 94, 0.6)', 'rgba(249, 115, 22, 0.6)', 'rgba(59, 130, 246, 0.6)'],
+                                        borderColor: ['#16a34a', '#ea580c', '#2563eb'],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: { scales: { y: { beginAtZero: true } }, responsive: true }
+                            });
+                        }});
+                    });
+                }
+            } 
+            else if (namespace === 'history') {
+                 gsap.from(".history-section .title", { duration: 0.8, y: 30, opacity: 0, ease: "power2.out" });
+                 gsap.from(".history-section .subtitle", { duration: 0.8, y: 30, opacity: 0, delay: 0.2, ease: "power2.out" });
+                 gsap.from(".table-container", { duration: 1, y: 50, opacity: 0, delay: 0.4, ease: "power3.out" });
+                 gsap.from(".history-row", { duration: 0.5, opacity: 0, x: -30, stagger: 0.2, delay: 0.8, ease: "power2.out" });
+            } 
+            else if (namespace === 'contact') {
+                 gsap.from(".contact-section .title", { duration: 0.8, y: 30, opacity: 0, ease: "power2.out" });
+                 gsap.from(".contact-section .subtitle", { duration: 0.8, y: 30, opacity: 0, delay: 0.2, ease: "power2.out" });
+                 gsap.from(".form-container", { duration: 1, x: -50, opacity: 0, delay: 0.4, ease: "power3.out" });
+                 gsap.from(".info-container", { duration: 1, x: 50, opacity: 0, delay: 0.4, ease: "power3.out" });
+            }
+        }
+
+        // --- BARBA.JS INITIALIZATION ---
+        barba.init({
+            transitions: [{
+                name: 'opacity-transition',
+                leave(data) {
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
+                },
+                enter(data) {
+                    return gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
+                }
+            }]
+        });
+
+        // Run scripts for the first page load
+        initializePageAndAnimations();
+
+        // Re-run scripts after each page transition
+        barba.hooks.after(() => {
+            initializePageAndAnimations();
+        });
+    </script>
+</body>
 </html>
