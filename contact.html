@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmaChasi - Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .barba-container { width: 100%; }
+        .barba-leave-active, .barba-enter-active { transition: opacity 0.5s; }
+        .barba-leave-to, .barba-enter-from { opacity: 0; }
+        .active-nav { border-bottom: 2px solid #22c55e; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div data-barba="wrapper">
+        <main data-barba="container" data-barba-namespace="contact">
+            
+            <header class="bg-white shadow-md sticky top-0 z-50">
+                <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                    <a href="index.html" class="text-2xl font-bold text-green-600" data-lang="app_name">AmaChasi</a>
+        
+                    <div class="flex items-center">
+                        <div class="hidden md:flex md:items-center md:space-x-6">
+                            <a href="index.html" class="nav-link text-gray-600 hover:text-green-600" data-lang="nav_home">Home</a>
+                            <a href="report.html" class="nav-link text-gray-600 hover:text-green-600" data-lang="nav_report">Get Report</a>
+                            <a href="history.html" class="nav-link text-gray-600 hover:text-green-600" data-lang="nav_history">History</a>
+                            <a href="contact.html" class="nav-link text-gray-600 hover:text-green-600 active-nav" data-lang="nav_contact">Contact</a>
+                        </div>
+        
+                        <button id="translateBtn" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300 ml-6">ଓଡ଼ିଆ</button>
+        
+                        <div class="md:hidden ml-4">
+                            <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+        
+                <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl">
+                    <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-green-50" data-lang="nav_home">Home</a>
+                    <a href="report.html" class="block py-3 px-6 text-gray-700 hover:bg-green-50" data-lang="nav_report">Get Report</a>
+                    <a href="history.html" class="block py-3 px-6 text-gray-700 hover:bg-green-50" data-lang="nav_history">History</a>
+                    <a href="contact.html" class="block py-3 px-6 text-gray-700 hover:bg-green-50 active-nav" data-lang="nav_contact">Contact</a>
+                </div>
+            </header>
+
+            <section class="contact-section py-20 px-6">
+                <div class="container mx-auto max-w-4xl">
+                     <div class="text-center mb-12">
+                        <h1 class="title text-4xl font-bold mb-4" data-lang="contact_title">Get In Touch</h1>
+                        <p class="subtitle text-gray-600" data-lang="contact_subtitle">Have questions? We'd love to hear from you.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="form-container bg-white p-8 rounded-xl shadow-lg">
+                             <form>
+                                <div class="mb-4">
+                                    <label for="contact-name" class="block text-gray-700 font-semibold mb-2" data-lang="form_name">Name</label>
+                                    <input type="text" id="contact-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="contact-email" class="block text-gray-700 font-semibold mb-2" data-lang="form_email">Email</label>
+                                    <input type="email" id="contact-email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="contact-message" class="block text-gray-700 font-semibold mb-2" data-lang="form_message">Message</label>
+                                    <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                                </div>
+                                <button type="submit" class="cta-button w-full bg-green-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-700 transition" data-lang="form_send">Send Message</button>
+                            </form>
+                        </div>
+                        <div class="info-container bg-green-50 p-8 rounded-xl">
+                             
+                            <h3 class="font-bold text-xl mb-4" data-lang="info_title">Contact Information</h3>
+                            <p class="mb-2"><strong>Address:</strong> Tech Park, Bhubaneswar, Odisha, India</p>
+                            <p class="mb-2"><strong>Email:</strong> support@amachasi.com</p>
+                            <p><strong>Phone:</strong> +91 12345 67890</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="bg-gray-800 text-white py-6 text-center">
+                <p>&copy; 2025 AmaChasi. All Rights Reserved.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/gsap@3.9.1/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script>
+        // --- MASTER TRANSLATION OBJECT FOR THE ENTIRE SITE ---
+        const allTranslations = {
+            home: {
+                en: {
+                    app_name: "AmaChasi", nav_home: "Home", nav_report: "Get Report", nav_history: "History", nav_contact: "Contact",
+                    hero_title: "Smart Farming, Brighter Futures",
+                    hero_subtitle: "Leveraging technology to predict crop yields and provide actionable insights for farmers across India. Your partner in agricultural success.",
+                    hero_cta: "Get Started", features_title: "Why Choose AmaChasi?", feature1_title: "Yield Prediction",
+                    feature1_desc: "Accurate forecasts based on your location, soil data, and weather patterns.",
+                    feature2_title: "Smart Optimization",
+                    feature2_desc: "Receive personalized suggestions for fertilizer, irrigation, and crop selection.",
+                    feature3_title: "Record Keeping",
+                    feature3_desc: "Easily track your past yields and recommendations to plan for the future."
+                },
+                or: {
+                    app_name: "ଆମ ଚାଷୀ", nav_home: "ମୁଖ୍ୟ ପୃଷ୍ଠା", nav_report: "ରିପୋର୍ଟ ପାଆନ୍ତୁ", nav_history: "ଇତିହାସ", nav_contact: "ଯୋଗାଯୋଗ",
+                    hero_title: "ସ୍ମାର୍ଟ ଚାଷ, ଉଜ୍ଜ୍ୱଳ ଭବିଷ୍ୟତ",
+                    hero_subtitle: "ସାରା ଭାରତର ଚାଷୀମାନଙ୍କ ପାଇଁ ଫସଲ ଅମଳର ପୂର୍ବାନୁମାନ ଏବଂ କାର୍ଯ୍ୟକ୍ଷମ ପରାମର୍ଶ ପ୍ରଦାନ କରିବା ପାଇଁ ପ୍ରଯୁକ୍ତିବିଦ୍ୟାର ବ୍ୟବହାର। କୃଷି ସଫଳତାରେ ଆପଣଙ୍କର ସାଥୀ।",
+                    hero_cta: "ଆରମ୍ଭ କରନ୍ତୁ", features_title: "ଆମ ଚାଷୀ କାହିଁକି ବାଛିବେ?", feature1_title: "ଅମଳ ପୂର୍ବାନୁମାନ",
+                    feature1_desc: "ଆପଣଙ୍କ ସ୍ଥାନ, ମାଟି ତଥ୍ୟ, ଏବଂ ପାଣିପାଗ ଢାଞ୍ଚା ଉପରେ ଆଧାରିତ ସଠିକ ପୂର୍ବାନୁମାନ।",
+                    feature2_title: "ସ୍ମାର୍ଟ ଅପ୍ଟିମାଇଜେସନ୍",
+                    feature2_desc: "ସାର, ଜଳସେଚନ, ଏବଂ ଫସଲ ଚୟନ ପାଇଁ ବ୍ୟକ୍ତିଗତ ପରାମର୍ଶ ଗ୍ରହଣ କରନ୍ତୁ।",
+                    feature3_title: "ରେକର୍ଡ ରଖିବା",
+                    feature3_desc: "ଭବିଷ୍ୟତ ପାଇଁ ଯୋଜନା କରିବାକୁ ଆପଣଙ୍କର ଅତୀତର ଅମଳ ଏବଂ ସୁପାରିଶଗୁଡ଼ିକୁ ସହଜରେ ଟ୍ରାକ୍ କରନ୍ତୁ।"
+                }
+            },
+            report: {
+                en: {
+                    app_name: "AmaChasi", nav_home: "Home", nav_report: "Get Report", nav_history: "History", nav_contact: "Contact",
+                    report_title: "Generate Your Crop Report",
+                    report_subtitle: "Fill in the details below to receive a personalized yield prediction and optimization plan.",
+                    form_name: "Your Name", form_location: "Location (District, State)", form_document: "Upload Soil Report (Optional)",
+                    form_submit: "Generate Report", sugg_title: "Report & Suggestions", sugg_heading: "Optimization Tips:",
+                    sugg_tip1: "Increase Nitrogen-based fertilizer by 15% during the vegetative stage.",
+                    sugg_tip2: "Ensure consistent irrigation, maintaining soil moisture at 80%.",
+                    sugg_tip3: "Consider crop rotation with legumes next season to improve soil health."
+                },
+                or: {
+                    app_name: "ଆମ ଚାଷୀ", nav_home: "ମୁଖ୍ୟ ପୃଷ୍ଠା", nav_report: "ରିପୋର୍ଟ ପାଆନ୍ତୁ", nav_history: "ଇତିହାସ", nav_contact: "ଯୋଗାଯୋଗ",
+                    report_title: "ଆପଣଙ୍କ ଫସଲ ରିପୋର୍ଟ ପ୍ରସ୍ତୁତ କରନ୍ତୁ",
+                    report_subtitle: "ଏକ ବ୍ୟକ୍ତିଗତ ଅମଳ ପୂର୍ବାନୁମାନ ଏବଂ ଅପ୍ଟିମାଇଜେସନ୍ ଯୋଜନା ପାଇବାକୁ ନିମ୍ନରେ ବିବରଣୀ ପୂରଣ କରନ୍ତୁ।",
+                    form_name: "ଆପଣଙ୍କ ନାମ", form_location: "ସ୍ଥାନ (ଜିଲ୍ଲା, ରାଜ୍ୟ)", form_document: "ମାଟି ରିପୋର୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ (ବୈକଳ୍ପିକ)",
+                    form_submit: "ରିପୋର୍ଟ ପ୍ରସ୍ତୁତ କରନ୍ତୁ", sugg_title: "ରିପୋର୍ଟ ଏବଂ ପରାମର୍ଶ", sugg_heading: "ଅପ୍ଟିମାଇଜେସନ୍ ପରାମର୍ଶ:",
+                    sugg_tip1: "ବୃକ୍ଷର ବୃଦ୍ଧି ସମୟରେ ନାଇଟ୍ରୋଜେନ୍ ଆଧାରିତ ସାର ୧୫% ବଢାନ୍ତୁ।",
+                    sugg_tip2: "ନିୟମିତ ଜଳସେଚନ ସୁନିଶ୍ଚିତ କରନ୍ତୁ, ମାଟିର ଆର୍ଦ୍ରତା ୮୦% ରଖନ୍ତୁ।",
+                    sugg_tip3: "ମାଟିର ସ୍ୱାସ୍ଥ୍ୟରେ ଉନ୍ନତି ଆଣିବା ପାଇଁ ପରବର୍ତ୍ତୀ ଋତୁରେ ଡାଲି ଜାତୀୟ ଫସଲ ସହିତ ଫସଲ ପରିବର୍ତ୍ତନ କରନ୍ତୁ।"
+                }
+            },
+            history: {
+                en: {
+                    app_name: "AmaChasi", nav_home: "Home", nav_report: "Get Report", nav_history: "History", nav_contact: "Contact",
+                    history_title: "Your Report History",
+                    history_subtitle: "Review your past predictions and track your progress over time.",
+                    table_date: "Date", table_location: "Location", table_crop: "Crop", table_yield: "Predicted Yield"
+                },
+                or: {
+                    app_name: "ଆମ ଚାଷୀ", nav_home: "ମୁଖ୍ୟ ପୃଷ୍ଠା", nav_report: "ରିପୋର୍ଟ ପାଆନ୍ତୁ", nav_history: "ଇତିହାସ", nav_contact: "ଯୋଗାଯୋଗ",
+                    history_title: "ଆପଣଙ୍କ ରିପୋର୍ଟ ଇତିହାସ",
+                    history_subtitle: "ଆପଣଙ୍କର ଅତୀତର ପୂର୍ବାନୁମାନ ସମୀକ୍ଷା କରନ୍ତୁ ଏବଂ ସମୟ ସହିତ ଆପଣଙ୍କର ଅଗ୍ରଗତି ଟ୍ରାକ୍ କରନ୍ତୁ।",
+                    table_date: "ତାରିଖ", table_location: "ସ୍ଥାନ", table_crop: "ଫସଲ", table_yield: "ଅନୁମାନିତ ଅମଳ"
+                }
+            },
+            contact: {
+                en: {
+                    app_name: "AmaChasi", nav_home: "Home", nav_report: "Get Report", nav_history: "History", nav_contact: "Contact",
+                    contact_title: "Get In Touch",
+                    contact_subtitle: "Have questions? We'd love to hear from you.",
+                    form_name: "Name", form_email: "Email", form_message: "Message", form_send: "Send Message",
+                    info_title: "Contact Information"
+                },
+                or: {
+                    app_name: "ଆମ ଚାଷୀ", nav_home: "ମୁଖ୍ୟ ପୃଷ୍ଠା", nav_report: "ରିପୋର୍ଟ ପାଆନ୍ତୁ", nav_history: "ଇତିହାସ", nav_contact: "ଯୋଗାଯୋଗ",
+                    contact_title: "ଯୋଗାଯୋଗ କରନ୍ତୁ",
+                    contact_subtitle: "ପ୍ରଶ୍ନ ଅଛି କି? ଆମେ ଆପଣଙ୍କଠାରୁ ଶୁଣିବାକୁ ପସନ୍ଦ କରିବୁ।",
+                    form_name: "ନାମ", form_email: "ଇମେଲ୍", form_message: "ସନ୍ଦେଶ", form_send: "ସନ୍ଦେଶ ପଠାନ୍ତୁ",
+                    info_title: "ଯୋଗାଯୋଗ ସୂଚନା"
+                }
+            }
+        };
+
+        function initializePageAndAnimations() {
+            // --- RESPONSIVE NAV MENU LOGIC ---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // --- TRANSLATION LOGIC ---
+            const translateBtn = document.getElementById('translateBtn');
+            const translatableElements = document.querySelectorAll('[data-lang]');
+            let currentLang = localStorage.getItem('chasiSetuLang') || 'en';
+
+            const translatePage = (lang) => {
+                const namespace = document.querySelector('[data-barba="container"]').dataset.barbaNamespace;
+                const pageTranslations = allTranslations[namespace];
+                if (!pageTranslations) return;
+
+                translatableElements.forEach(el => {
+                    const key = el.getAttribute('data-lang');
+                    if (pageTranslations[lang] && pageTranslations[lang][key]) {
+                        el.textContent = pageTranslations[lang][key];
+                    }
+                });
+                if (translateBtn) {
+                   translateBtn.textContent = lang === 'en' ? 'ଓଡ଼ିଆ' : 'English';
+                }
+            };
+            
+            if (translateBtn) {
+                translateBtn.addEventListener('click', () => {
+                    currentLang = currentLang === 'en' ? 'or' : 'en';
+                    localStorage.setItem('chasiSetuLang', currentLang);
+                    translatePage(currentLang);
+                });
+            }
+            translatePage(currentLang);
+
+            // --- GSAP ANIMATION LOGIC ---
+            const namespace = document.querySelector('[data-barba="container"]').dataset.barbaNamespace;
+            if (namespace === 'home') {
+                 gsap.from(".hero-section .title", { duration: 1, y: 50, opacity: 0, ease: "power3.out" });
+                 gsap.from(".hero-section .subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.3, ease: "power3.out" });
+                 gsap.from(".hero-section .cta-button", { duration: 1, y: 50, opacity: 0, delay: 0.6, ease: "power3.out" });
+                 gsap.from(".feature-card", { duration: 0.8, y: 100, opacity: 0, stagger: 0.2, ease: "power3.out" });
+            } else if (namespace === 'report') {
+                gsap.from(".report-section .title", { duration: 0.8, y: 30, opacity: 0, ease: "power2.out" });
+                gsap.from(".report-section .subtitle", { duration: 0.8, y: 30, opacity: 0, delay: 0.2, ease: "power2.out" });
+                gsap.from(".form-container", { duration: 1, y: 50, opacity: 0, delay: 0.4, ease: "power3.out" });
+
+                const form = document.querySelector('form');
+                const suggestionsBox = document.getElementById('suggestions');
+                if(form && suggestionsBox) {
+                    form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        suggestionsBox.classList.remove('hidden');
+                        gsap.from(suggestionsBox, { duration: 1, y: 50, opacity: 0, ease: "power3.out" });
+                    });
+                }
+            } else if (namespace === 'history') {
+                 gsap.from(".history-section .title", { duration: 0.8, y: 30, opacity: 0, ease: "power2.out" });
+                 gsap.from(".history-section .subtitle", { duration: 0.8, y: 30, opacity: 0, delay: 0.2, ease: "power2.out" });
+                 gsap.from(".table-container", { duration: 1, y: 50, opacity: 0, delay: 0.4, ease: "power3.out" });
+                 gsap.from(".history-row", { duration: 0.5, opacity: 0, x: -30, stagger: 0.2, delay: 0.8, ease: "power2.out" });
+            } else if (namespace === 'contact') {
+                 gsap.from(".contact-section .title", { duration: 0.8, y: 30, opacity: 0, ease: "power2.out" });
+                 gsap.from(".contact-section .subtitle", { duration: 0.8, y: 30, opacity: 0, delay: 0.2, ease: "power2.out" });
+                 gsap.from(".form-container", { duration: 1, x: -50, opacity: 0, delay: 0.4, ease: "power3.out" });
+                 gsap.from(".info-container", { duration: 1, x: 50, opacity: 0, delay: 0.4, ease: "power3.out" });
+            }
+        }
+
+        // --- BARBA.JS INITIALIZATION ---
+        barba.init({
+            transitions: [{
+                name: 'opacity-transition',
+                leave(data) {
+                    // Hide mobile menu before leaving
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
+                },
+                enter(data) {
+                    return gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
+                }
+            }]
+        });
+
+        // Run scripts for the first page load
+        initializePageAndAnimations();
+
+        // Re-run scripts after each page transition
+        barba.hooks.after(() => {
+            initializePageAndAnimations();
+        });
+    </script>
+</body>
+</html>
