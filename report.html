@@ -105,6 +105,14 @@
                                 </ul>
                             </div>
                         </div>
+
+                        <div class="mt-10 text-center">
+                            <button id="print-report-btn" class="inline-flex items-center bg-green-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-700 transition duration-300" data-lang="print_report">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                                Print Report
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -166,7 +174,8 @@
                     sugg_heading: "Optimization Tips:",
                     sugg_tip1: "Increase Nitrogen-based fertilizer by 15%.",
                     sugg_tip2: "Ensure consistent irrigation, maintaining high soil moisture.",
-                    sugg_tip3: "Consider crop rotation with legumes next season."
+                    sugg_tip3: "Consider crop rotation with legumes next season.",
+                    print_report: "Print Report"
                 },
                 or: {
                     app_name: "ଆମ ଚାଷୀ", nav_home: "ମୁଖ୍ୟ ପୃଷ୍ଠା", nav_report: "ରିପୋର୍ଟ ପାଆନ୍ତୁ", nav_history: "ଇତିହାସ", nav_contact: "ଯୋଗାଯୋଗ", nav_login: "ଲଗଇନ୍",
@@ -177,7 +186,8 @@
                     sugg_heading: "ଅପ୍ଟିମାଇଜେସନ୍ ପରାମର୍ଶ:",
                     sugg_tip1: "ନାଇଟ୍ରୋଜେନ୍ ଆଧାରିତ ସାର ୧୫% ବଢାନ୍ତୁ।",
                     sugg_tip2: "ଉଚ୍ଚ ମୃତ୍ତିକା ଆର୍ଦ୍ରତା ବଜାୟ ରଖି ନିୟମିତ ଜଳସେଚନ ସୁନିଶ୍ଚିତ କରନ୍ତୁ।",
-                    sugg_tip3: "ପରବର୍ତ୍ତୀ ଋତୁରେ ଡାଲି ଜାତୀୟ ଫସଲ ସହିତ ଫସଲ ପରିବର୍ତ୍ତନ କରନ୍ତୁ।"
+                    sugg_tip3: "ପରବର୍ତ୍ତୀ ଋତୁରେ ଡାଲି ଜାତୀୟ ଫସଲ ସହିତ ଫସଲ ପରିବର୍ତ୍ତନ କରନ୍ତୁ।",
+                    print_report: "ରିପୋର୍ଟ ପ୍ରିଣ୍ଟ କରନ୍ତୁ"
                 }
             },
             history: {
@@ -258,6 +268,15 @@
                 });
             }
             translatePage(currentLang);
+            
+            // --- NON-FUNCTIONAL PRINT BUTTON ---
+            const printBtn = document.getElementById('print-report-btn');
+            if(printBtn) {
+                printBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('Print functionality is coming soon!');
+                });
+            }
 
             // --- GSAP & PAGE-SPECIFIC LOGIC ---
             const namespace = document.querySelector('[data-barba="container"]').dataset.barbaNamespace;
